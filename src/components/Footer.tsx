@@ -11,9 +11,11 @@ const Footer = () => {
           {/* Brand & Contact */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-luxury rounded-lg flex items-center justify-center">
-                <span className="text-luxury-foreground font-bold text-lg">L</span>
-              </div>
+              <img 
+                src="/image.png" 
+                alt="Lotes Premium Acacías Logo" 
+                className="w-10 h-10 rounded-lg object-contain"
+              />
               <div>
                 <h3 className="text-xl font-bold">Lotes Premium</h3>
                 <p className="text-sm opacity-80">Acacías, Meta</p>

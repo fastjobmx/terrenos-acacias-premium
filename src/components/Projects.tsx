@@ -137,8 +137,8 @@ const Projects = () => {
               <div className="text-sm text-muted-foreground">Legal</div>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-elegant">
-              <div className="text-2xl font-bold text-primary">24</div>
-              <div className="text-sm text-muted-foreground">Meses Max</div>
+              <div className="text-2xl font-bold text-primary">60</div>
+              <div className="text-sm text-muted-foreground">Meses Máx</div>
             </div>
           </div>
         </div>

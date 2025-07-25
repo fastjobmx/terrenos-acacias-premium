@@ -18,9 +18,11 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-luxury rounded-lg flex items-center justify-center">
-              <span className="text-luxury-foreground font-bold text-lg">L</span>
-            </div>
+            <img 
+              src="/image.png" 
+              alt="Lotes Premium Acacías Logo" 
+              className="w-10 h-10 rounded-lg object-contain"
+            />
             <div>
               <h1 className="text-xl font-bold text-primary">Lotes Premium</h1>
               <p className="text-sm text-muted-foreground">Acacías, Meta</p>

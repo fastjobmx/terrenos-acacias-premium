@@ -66,7 +66,7 @@ const Hero = () => {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <div className="bg-white/10 backdrop-blur rounded-lg p-4">
-              <div className="text-2xl md:text-3xl font-bold text-luxury">10M+</div>
+              <div className="text-2xl md:text-3xl font-bold text-luxury">$10M+</div>
               <div className="text-sm text-white/80">Desde</div>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-lg p-4">
@@ -74,8 +74,8 @@ const Hero = () => {
               <div className="text-sm text-white/80">Interés</div>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-lg p-4">
-              <div className="text-2xl md:text-3xl font-bold text-luxury">24</div>
-              <div className="text-sm text-white/80">Meses Max</div>
+              <div className="text-2xl md:text-3xl font-bold text-luxury">60</div>
+              <div className="text-sm text-white/80">Meses Máx</div>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-lg p-4">
               <div className="text-2xl md:text-3xl font-bold text-luxury">100%</div>

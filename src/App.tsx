@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import PWAInstall from "./components/PWAInstall";
 import MobileEnhancements from "./components/MobileEnhancements";
 import PropertyPage from "./components/PropertyPage";
+import NotFound from "./pages/NotFound";
 
 // Componente para la página principal
 const HomePage = () => (
@@ -44,8 +45,8 @@ function App() {
           {/* Páginas individuales de propiedades */}
           <Route path="/propiedad/:slug" element={<PropertyPage />} />
           
-          {/* Ruta de fallback - redirige a la página principal */}
-          <Route path="*" element={<HomePage />} />
+          {/* Ruta de fallback - página 404 personalizada */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>

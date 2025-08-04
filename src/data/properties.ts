@@ -12,6 +12,7 @@ export interface Property {
   badge: string;
   video?: string;
   image?: string;
+  poster?: string; // Thumbnail específico para video
   reserveAmount: string;
   reserveDays: string;
   description: string;
@@ -85,6 +86,7 @@ export const properties: Property[] = [
     ],
     badge: "MÁS POPULAR",
     video: "/la-floresta.mp4",
+    poster: "/la-floresta-poster.jpg", // Thumbnail específico del video
     gallery: ["/la-floresta-1.jpg", "/la-floresta-2.jpg", "/la-floresta-3.jpg"],
     reserveAmount: "Consulta",
     reserveDays: "20 días",
@@ -150,6 +152,7 @@ export const properties: Property[] = [
     ],
     badge: "PREMIUM",
     video: "/bosques-alkali.mp4",
+    poster: "/bosques-alkali-poster.jpg", // Thumbnail específico del video
     gallery: ["/bosques-alkali-1.jpg", "/bosques-alkali-2.jpg", "/bosques-alkali-3.jpg"],
     reserveAmount: "$1M",
     reserveDays: "1 mes",
@@ -282,6 +285,7 @@ export const properties: Property[] = [
     ],
     badge: "URBANO",
     video: "/reservas-eden.mp4",
+    poster: "/reservas-eden-poster.jpg", // Thumbnail específico del video
     gallery: ["/reservas-eden-1.jpg", "/reservas-eden-2.jpg", "/reservas-eden-3.jpg"],
     reserveAmount: "Consulta",
     reserveDays: "Disponible",
@@ -348,6 +352,7 @@ export const properties: Property[] = [
     ],
     badge: "INVERSIÓN IDEAL",
     video: "/versalles.mp4",
+    poster: "/versalles-poster.jpg", // Thumbnail específico del video
     gallery: ["/versalles-1.jpg", "/versalles-2.jpg", "/versalles-3.jpg"],
     reserveAmount: "$1M",
     reserveDays: "30 días",

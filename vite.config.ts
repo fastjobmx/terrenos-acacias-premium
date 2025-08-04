@@ -10,7 +10,9 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     hmr: {
       overlay: true
-    }
+    },
+    // Configuración para SPA - redirige todas las rutas a index.html
+    historyApiFallback: true
   },
   
   plugins: [
@@ -23,6 +25,9 @@ export default defineConfig(({ mode }) => ({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,woff,woff2}'],
         maximumFileSizeToCacheInBytes: 5000000,
+        // Configuración para SPA en PWA
+        navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/api/, /^\/_/, /^\/sw\.js$/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -136,6 +141,8 @@ export default defineConfig(({ mode }) => ({
   
   preview: {
     port: 4173,
-    host: true
+    host: true,
+    // Configuración para preview también
+    historyApiFallback: true
   }
 }));

@@ -6,7 +6,7 @@ Sitio web profesional para la venta de lotes premium en Acacías, Meta, Colombia
 
 ## Características
 
-- 🏆 4 proyectos inmobiliarios exclusivos
+- 🏆 5 proyectos inmobiliarios exclusivos
 - 💰 Financiación directa 0% interés
 - 📄 Escrituras públicas individuales
 - 📱 Diseño responsive y moderno

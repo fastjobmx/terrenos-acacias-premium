@@ -6,10 +6,11 @@ import HowToBuy from "@/components/HowToBuy";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import DesktopUrgencySystem from '../components/DesktopUrgencySystem';
 
-const Index = () => {
+function Index() {
   return (
-    <div className="min-h-screen">
+    <div>
       <Header />
       <Hero />
       <Projects />
@@ -18,8 +19,9 @@ const Index = () => {
       <FAQ />
       <Contact />
       <Footer />
+      <DesktopUrgencySystem />
     </div>
   );
-};
+}
 
 export default Index;

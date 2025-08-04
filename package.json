@@ -1,14 +1,22 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "an-bienes-raices-pwa",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "description": "Plataforma web para venta de lotes en Acacías - AN Bienes Raíces",
+  "keywords": ["bienes raíces", "lotes", "acacías", "inversión", "terrenos"],
+  "author": "AN Bienes Raíces",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --mode development",
+    "build:analyze": "npm run build && npx vite-bundle-analyzer dist/stats.html",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "preview": "vite preview --host",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist node_modules/.vite",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -78,5 +86,23 @@
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-pwa": "^0.20.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
 }

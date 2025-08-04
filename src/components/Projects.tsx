@@ -1,182 +1,163 @@
 import ProjectCard from "./ProjectCard";
-import lotsImage from "@/assets/lots-aerial.jpg";
-import amenitiesImage from "@/assets/amenities.jpg";
+import { properties } from "@/data/properties";
+import { Sparkles, TrendingUp, Shield, Clock, Award } from "lucide-react";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "🌳 La Floresta",
-      location: "Vereda Montelibano",
-      distance: "18 min de Acacías (8 km)",
-      lotSize: "7x14 metros",
-      priceFrom: "10M",
-      downPayment: "20%",
-      financing: "18 meses",
-      features: [
-        "Hermosa portería bidireccional",
-        "Vías embalastradas",
-        "Luz y agua sobre las vías",
-        "Parques infantiles",
-        "Canchas múltiples",
-        "Zona BBQ y Kiosco",
-        "Parqueo para visitantes",
-        "Diseño de construcción libre",
-        "Promesa de compra y venta",
-        "Escritura pública al final"
-      ],
-      badge: "MÁS POPULAR",
-      image: lotsImage,
-      reserveAmount: "Consulta",
-      reserveDays: "20 días"
-    },
-    {
-      title: "🌲 Bosques de Alkalí",
-      location: "A 800m zona urbana",
-      distance: "Acacías centro",
-      lotSize: "7x15 y 10x15 metros",
-      priceFrom: "30M",
-      downPayment: "40%",
-      financing: "14 meses",
-      features: [
-        "Agua y luz disponibles",
-        "Vías embalastradas",
-        "Parques y zona BBQ",
-        "Salón comunal en desarrollo",
-        "Pozo séptico industrial certificado",
-        "Promesa de compra y venta",
-        "Escritura pública individual",
-        "Financiación directa"
-      ],
-      badge: "PREMIUM",
-      image: amenitiesImage,
-      reserveAmount: "$1M",
-      reserveDays: "1 mes"
-    },
-    {
-      title: "🏞️ Sábana Real",
-      location: "Vereda Montelibano",
-      distance: "7 km del parque principal",
-      lotSize: "7x14 metros", 
-      priceFrom: "14M",
-      downPayment: "20%",
-      financing: "24 meses",
-      features: [
-        "Documentos por subdivisión",
-        "Hermosa portería",
-        "Vías embalastradas",
-        "Parques y canchas múltiples",
-        "Zona BBQ y Kiosco",
-        "Zonas verdes",
-        "Diseño construcción libre",
-        "Pozo séptico industrial",
-        "Sin intereses"
-      ],
-      badge: "SIN INTERÉS",
-      image: lotsImage,
-      reserveAmount: "$500K",
-      reserveDays: "20 días"
-    },
-    {
-      title: "🏔️ Reservas del Edén",
-      location: "Parte alta de Acacías",
-      distance: "Zona urbana Acacías",
-      lotSize: "6x12 metros",
-      priceFrom: "51M",
-      downPayment: "5M inicial",
-      financing: "5 años",
-      features: [
-        "Proyecto urbano premium",
-        "Vías pavimentadas",
-        "Gas Natural",
-        "Alcantarillado",
-        "Agua de acueducto",
-        "Construcción libre",
-        "Escrituras públicas individuales",
-        "0% tasa de interés",
-        "Cuotas mensuales fijas"
-      ],
-      badge: "URBANO",
-      image: amenitiesImage,
-      reserveAmount: "Consulta",
-      reserveDays: "Disponible"
-    }
-  ];
-
   return (
-    <section id="proyectos" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block mb-4">
-            <div className="bg-gradient-luxury text-luxury-foreground rounded-full px-6 py-2">
-              <span className="font-semibold text-sm">🏆 PROYECTOS DISPONIBLES</span>
+    <section id="projects" className="py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20 relative overflow-hidden">
+      {/* Background decorativo */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-luxury/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-success/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header mejorado */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6">
+            <div className="glass-premium bg-gradient-luxury text-luxury-foreground rounded-full px-8 py-3 shadow-luxury">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                <span className="font-bold text-sm">🏆 PROYECTOS EXCLUSIVOS</span>
+                <Sparkles className="w-5 h-5" />
+              </div>
             </div>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            4 Proyectos Exclusivos en Acacías
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary mb-6 text-shadow">
+            5 Proyectos <span className="text-gradient-luxury">Premium</span> en Acacías
           </h2>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Invierte en el futuro de tu familia con nuestros lotes premium. 
-            Financiación directa, 0% interés y documentos en regla.
+            <span className="text-primary font-semibold"> Financiación directa</span>, 
+            <span className="text-luxury font-semibold"> 0% interés</span> y 
+            <span className="text-success font-semibold"> documentos en regla</span>.
           </p>
 
-          {/* Key Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-3xl mx-auto">
-            <div className="bg-white rounded-lg p-4 shadow-elegant">
-              <div className="text-2xl font-bold text-primary">4</div>
-              <div className="text-sm text-muted-foreground">Proyectos</div>
+          {/* Key Stats mejoradas */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
+            <div className="glass-premium p-6 rounded-2xl shadow-elegant hover-lift group">
+              <div className="flex items-center justify-center mb-3">
+                <div className="p-3 bg-primary/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-1">5</div>
+              <div className="text-sm text-muted-foreground font-medium">Proyectos Exclusivos</div>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-elegant">
-              <div className="text-2xl font-bold text-success">0%</div>
-              <div className="text-sm text-muted-foreground">Interés</div>
+            
+            <div className="glass-premium p-6 rounded-2xl shadow-elegant hover-lift group">
+              <div className="flex items-center justify-center mb-3">
+                <div className="p-3 bg-success/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-6 h-6 text-success" />
+                </div>
+              </div>
+              <div className="text-3xl font-bold text-success mb-1">0%</div>
+              <div className="text-sm text-muted-foreground font-medium">Interés Garantizado</div>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-elegant">
-              <div className="text-2xl font-bold text-luxury">100%</div>
-              <div className="text-sm text-muted-foreground">Legal</div>
+            
+            <div className="glass-premium p-6 rounded-2xl shadow-elegant hover-lift group">
+              <div className="flex items-center justify-center mb-3">
+                <div className="p-3 bg-luxury/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <Shield className="w-6 h-6 text-luxury" />
+                </div>
+              </div>
+              <div className="text-3xl font-bold text-luxury mb-1">100%</div>
+              <div className="text-sm text-muted-foreground font-medium">Legal y Seguro</div>
             </div>
-            <div className="bg-white rounded-lg p-4 shadow-elegant">
-              <div className="text-2xl font-bold text-primary">60</div>
-              <div className="text-sm text-muted-foreground">Meses Máx</div>
+            
+            <div className="glass-premium p-6 rounded-2xl shadow-elegant hover-lift group">
+              <div className="flex items-center justify-center mb-3">
+                <div className="p-3 bg-primary/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <Clock className="w-6 h-6 text-primary" />
+                </div>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-1">60</div>
+              <div className="text-sm text-muted-foreground font-medium">Meses Máximo</div>
             </div>
           </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+        {/* Projects Grid mejorado */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {properties.map((property, index) => (
+            <div 
+              key={property.id}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <ProjectCard {...property} />
+            </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <div className="bg-gradient-primary text-primary-foreground rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
-              ¿No sabes cuál elegir?
-            </h3>
-            <p className="mb-6 opacity-90">
-              Nuestro asesor Pablo Niño te ayudará a encontrar el lote perfecto 
-              según tu presupuesto y necesidades.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href={`https://wa.me/+573227597180?text=${encodeURIComponent("Hola Pablo! Necesito asesoría para elegir el mejor lote para mi familia.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-success hover:bg-success/90 text-success-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                📱 WhatsApp: +57 322 759 7180
-              </a>
-              <a 
-                href={`https://wa.me/+573132574573?text=${encodeURIComponent("Hola! Quiero información sobre los lotes en Acacías.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                📱 WhatsApp: +57 313 257 4573
-              </a>
+        {/* Bottom CTA mejorado */}
+        <div className="text-center">
+          <div className="glass-premium bg-gradient-primary text-primary-foreground rounded-3xl p-10 max-w-4xl mx-auto shadow-luxury relative overflow-hidden">
+            {/* Decoración de fondo */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-2xl" />
+            
+            <div className="relative z-10">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Sparkles className="w-6 h-6 text-luxury" />
+                <h3 className="text-3xl md:text-4xl font-display font-bold">
+                  ¿No sabes cuál elegir?
+                </h3>
+                <Sparkles className="w-6 h-6 text-luxury" />
+              </div>
+              
+              <p className="text-xl mb-8 opacity-95 leading-relaxed max-w-2xl mx-auto">
+                Nuestro asesor <span className="font-bold text-luxury">Pablo Niño</span> te ayudará a encontrar el lote perfecto 
+                según tu presupuesto y necesidades. ¡Asesoría gratuita y personalizada!
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a 
+                  href={`https://wa.me/+573227597180?text=${encodeURIComponent("Hola Pablo! Necesito asesoría personalizada para elegir el mejor lote para mi familia. ¿Cuándo podemos hablar?")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-success hover:bg-success/90 text-success-foreground px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover-lift shadow-lg group"
+                >
+                  <div className="p-2 bg-white/20 rounded-lg group-hover:scale-110 transition-transform">
+                    📱
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm opacity-90">WhatsApp Principal</div>
+                    <div className="text-lg">+57 322 759 7180</div>
+                  </div>
+                </a>
+                
+                <a 
+                  href={`https://wa.me/+573132574573?text=${encodeURIComponent("Hola! Quiero información detallada sobre los lotes premium en Acacías.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover-lift shadow-lg group"
+                >
+                  <div className="p-2 bg-white/20 rounded-lg group-hover:scale-110 transition-transform">
+                    📱
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm opacity-90">WhatsApp Alternativo</div>
+                    <div className="text-lg">+57 313 257 4573</div>
+                  </div>
+                </a>
+              </div>
+
+              {/* Testimonial rápido */}
+              <div className="mt-8 p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">⭐</span>
+                  ))}
+                </div>
+                <p className="text-sm opacity-90 italic">
+                  "Pablo nos ayudó a encontrar el lote perfecto. Su asesoría fue clave para tomar la mejor decisión."
+                </p>
+                <p className="text-xs opacity-75 mt-2">- María González, Cliente satisfecha</p>
+              </div>
             </div>
           </div>
         </div>

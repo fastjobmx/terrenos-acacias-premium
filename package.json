@@ -16,7 +16,8 @@
     "preview": "vite preview --host",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist node_modules/.vite",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "generate-thumbnails": "node scripts/generate-thumbnails.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

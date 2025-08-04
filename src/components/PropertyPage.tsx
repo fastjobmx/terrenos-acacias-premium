@@ -3,6 +3,7 @@ import { ArrowLeft, Share2, MapPin, Calendar, DollarSign, Home, Phone, MessageCi
 import { getPropertyBySlug } from '@/data/properties';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import LazyVideoPlayer from './LazyVideoPlayer';
 
 const PropertyPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -102,14 +103,11 @@ const PropertyPage = () => {
         {/* Main Image/Video */}
         <div className="aspect-video bg-muted relative overflow-hidden">
           {property.video ? (
-            <video 
-              className="w-full h-full object-cover"
-              controls
-              poster={property.image}
-            >
-              <source src={property.video} type="video/mp4" />
-              Tu navegador no soporta videos.
-            </video>
+            <LazyVideoPlayer 
+              src={property.video} 
+              poster={property.poster || property.image} 
+              title={property.title}
+            />
           ) : (
             <img 
               src={property.image || '/placeholder-property.jpg'} 
